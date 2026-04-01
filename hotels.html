@@ -6,12 +6,16 @@
     <title>Hotels - Farenest Travels | Book Hotels Worldwide</title>
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
 
 <nav class="navbar">
     <div class="nav-container">
-        <div class="logo">Farenest<span>Travels</span></div>
+        <div class="logo">
+            <i class="fas fa-plane-departure"></i>
+            Farenest<span>Travels</span>
+        </div>
         <ul class="nav-links">
             <li><a href="index.html">Home</a></li>
             <li><a href="about.html">About Us</a></li>
@@ -24,27 +28,38 @@
 
 <a href="https://wa.me/44798515953" class="whatsapp-float" target="_blank">
     <div class="whatsapp-btn">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
+        <i class="fab fa-whatsapp"></i>
     </div>
 </a>
 
 <section class="page-header">
-    <h1>Luxury Hotels Worldwide</h1>
-    <p>Find the perfect accommodation for your stay</p>
+    <h1>Hotels Worldwide</h1>
+    <p>Find the perfect accommodation in any city across the globe</p>
 </section>
 
 <section class="hotels-section">
     <div class="container">
         <div class="hotel-filters">
-            <input type="text" id="hotelSearch" placeholder="Search by hotel name or location..." onkeyup="filterHotels()">
+            <input type="text" id="hotelSearch" placeholder="Search by hotel name, city, or country..." onkeyup="filterHotels()">
             <select id="priceFilter" onchange="filterHotels()">
                 <option value="all">All Prices</option>
-                <option value="0-500">Under $500</option>
+                <option value="0-100">Under $100</option>
+                <option value="100-200">$100 - $200</option>
+                <option value="200-500">$200 - $500</option>
                 <option value="500-1000">$500 - $1000</option>
                 <option value="1000+">$1000+</option>
             </select>
+            <select id="ratingFilter" onchange="filterHotels()">
+                <option value="all">All Ratings</option>
+                <option value="5">5 Stars</option>
+                <option value="4">4 Stars & Up</option>
+                <option value="3">3 Stars & Up</option>
+            </select>
         </div>
         <div id="hotelsGrid" class="hotels-grid"></div>
+        <div id="loadMoreBtn" class="load-more">
+            <button onclick="loadMoreHotels()" class="btn">Load More Hotels</button>
+        </div>
     </div>
 </section>
 
@@ -64,8 +79,8 @@
         </div>
         <div class="footer-section">
             <h3>Contact</h3>
-            <p>📧 info@farenesttravels.com</p>
-            <p>📞 +44 798 515 953</p>
+            <p><i class="fas fa-envelope"></i> info@farenesttravels.com</p>
+            <p><i class="fab fa-whatsapp"></i> +44 798 515 953</p>
         </div>
     </div>
     <div class="footer-bottom">
