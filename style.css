@@ -32,11 +32,17 @@ body {
 }
 
 .logo {
-    font-size: 1.8rem;
+    font-size: 1.5rem;
     font-weight: bold;
     background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
+}
+
+.logo i {
+    background: none;
+    -webkit-text-fill-color: #667eea;
+    margin-right: 8px;
 }
 
 .logo span {
@@ -63,6 +69,12 @@ body {
     color: #667eea;
 }
 
+.menu-toggle {
+    display: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
 /* WhatsApp Button */
 .whatsapp-float {
     position: fixed;
@@ -84,13 +96,13 @@ body {
     transition: transform 0.3s;
 }
 
-.whatsapp-btn:hover {
-    transform: scale(1.1);
+.whatsapp-btn i {
+    font-size: 2rem;
+    color: white;
 }
 
-.whatsapp-btn img {
-    width: 35px;
-    height: 35px;
+.whatsapp-btn:hover {
+    transform: scale(1.1);
 }
 
 @keyframes pulse {
@@ -99,10 +111,15 @@ body {
     100% { transform: scale(1); }
 }
 
-/* Hero Section */
-.hero {
+/* Hero Slider */
+.hero-slider {
+    margin-top: 70px;
     height: 90vh;
-    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://images.unsplash.com/photo-1436491865332-7a61a109cc05?w=1600');
+    position: relative;
+}
+
+.slide {
+    height: 100%;
     background-size: cover;
     background-position: center;
     display: flex;
@@ -110,19 +127,18 @@ body {
     justify-content: center;
     text-align: center;
     color: white;
-    margin-top: 70px;
 }
 
-.hero-content h1 {
+.slide-content h1 {
     font-size: 3.5rem;
     margin-bottom: 1rem;
 }
 
-.hero-content h1 span {
+.slide-content h1 span {
     color: #ffd700;
 }
 
-.hero-content p {
+.slide-content p {
     font-size: 1.2rem;
     margin-bottom: 2rem;
 }
@@ -152,8 +168,15 @@ body {
     color: #667eea;
 }
 
-.btn-primary {
+.btn-small {
+    display: inline-block;
+    padding: 0.5rem 1rem;
     background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 0.9rem;
+    margin-top: 0.5rem;
 }
 
 /* Container */
@@ -166,7 +189,7 @@ body {
 /* Quick Search */
 .quick-search {
     padding: 4rem 2rem;
-    background: #f8f9fa;
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
     text-align: center;
 }
 
@@ -176,7 +199,7 @@ body {
 }
 
 .search-box {
-    max-width: 800px;
+    max-width: 900px;
     margin: 2rem auto;
     display: flex;
     gap: 1rem;
@@ -197,8 +220,8 @@ body {
     min-width: 200px;
 }
 
-/* Popular Destinations */
-.popular-destinations {
+/* Featured Destinations */
+.featured-destinations {
     padding: 4rem 2rem;
 }
 
@@ -209,7 +232,7 @@ body {
     color: #1a2a3a;
 }
 
-.destinations-grid {
+.destinations-slider {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
     gap: 2rem;
@@ -249,19 +272,41 @@ body {
     margin-bottom: 0.5rem;
 }
 
-.destination-info .price {
-    display: inline-block;
-    background: #ffd700;
-    color: #333;
-    padding: 0.3rem 1rem;
-    border-radius: 20px;
-    margin-top: 0.5rem;
+/* Features */
+.features {
+    padding: 4rem 2rem;
+    background: #f8f9fa;
+}
+
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+}
+
+.feature-card {
+    text-align: center;
+    padding: 2rem;
+    background: white;
+    border-radius: 15px;
+    transition: transform 0.3s;
+}
+
+.feature-card:hover {
+    transform: translateY(-10px);
+}
+
+.feature-card i {
+    font-size: 3rem;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 1rem;
 }
 
 /* Airlines */
 .airlines {
     padding: 4rem 2rem;
-    background: #f8f9fa;
 }
 
 .airlines-grid {
@@ -275,51 +320,60 @@ body {
     background: white;
     padding: 1.5rem;
     border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
     transition: all 0.3s;
 }
 
 .airline-card:hover {
     transform: translateY(-5px);
-    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.15);
 }
 
-.airline-card img {
-    width: 80px;
-    height: 80px;
-    object-fit: contain;
+.airline-card i {
+    font-size: 3rem;
+    color: #667eea;
     margin-bottom: 1rem;
 }
 
-/* Team Section */
-.team {
+/* Gallery */
+.gallery {
     padding: 4rem 2rem;
+    background: #f8f9fa;
 }
 
-.team-grid {
+.gallery-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 2rem;
-    text-align: center;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
 }
 
-.team-card {
-    background: white;
-    padding: 2rem;
-    border-radius: 15px;
-    box-shadow: 0 5px 20px rgba(0,0,0,0.1);
-    transition: all 0.3s;
+.gallery-item {
+    position: relative;
+    border-radius: 10px;
+    overflow: hidden;
+    height: 300px;
 }
 
-.team-card:hover {
-    transform: translateY(-10px);
-}
-
-.team-card img {
-    width: 150px;
-    height: 150px;
-    border-radius: 50%;
+.gallery-item img {
+    width: 100%;
+    height: 100%;
     object-fit: cover;
-    margin-bottom: 1rem;
+}
+
+.gallery-overlay {
+    position: absolute;
+    bottom: -100%;
+    left: 0;
+    right: 0;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    padding: 1rem;
+    text-align: center;
+    transition: bottom 0.3s;
+}
+
+.gallery-item:hover .gallery-overlay {
+    bottom: 0;
 }
 
 /* Testimonials */
@@ -347,8 +401,37 @@ body {
 }
 
 .testimonial-card .stars {
-    font-size: 1.5rem;
+    font-size: 1.2rem;
     margin-bottom: 1rem;
+    color: #ffd700;
+}
+
+/* Newsletter */
+.newsletter {
+    padding: 4rem 2rem;
+    text-align: center;
+    background: #1a2a3a;
+    color: white;
+}
+
+.newsletter h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+.newsletter form {
+    max-width: 500px;
+    margin: 2rem auto 0;
+    display: flex;
+    gap: 1rem;
+}
+
+.newsletter input {
+    flex: 1;
+    padding: 1rem;
+    border: none;
+    border-radius: 10px;
+    font-size: 1rem;
 }
 
 /* Page Header */
@@ -356,7 +439,7 @@ body {
     background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
     color: white;
     text-align: center;
-    padding: 6rem 2rem 4rem;
+    padding: 8rem 2rem 4rem;
     margin-top: 70px;
 }
 
@@ -400,6 +483,10 @@ body {
     color: #667eea;
 }
 
+.about-story h2 i {
+    margin-right: 10px;
+}
+
 .features-list {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -409,6 +496,11 @@ body {
 
 .feature-item {
     padding: 0.5rem;
+}
+
+.feature-item i {
+    color: #28a745;
+    margin-right: 10px;
 }
 
 .reviews-section {
@@ -438,6 +530,7 @@ body {
 .flight-search-section {
     padding: 4rem 2rem;
     background: #f8f9fa;
+    min-height: 80vh;
 }
 
 .flight-search-card {
@@ -465,6 +558,11 @@ body {
     font-weight: 600;
     margin-bottom: 0.5rem;
     color: #666;
+}
+
+.form-group label i {
+    margin-right: 5px;
+    color: #667eea;
 }
 
 .form-group input,
@@ -498,6 +596,11 @@ body {
     align-items: center;
     flex-wrap: wrap;
     box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    transition: transform 0.3s;
+}
+
+.flight-card:hover {
+    transform: translateX(5px);
 }
 
 .flight-info {
@@ -511,9 +614,9 @@ body {
     margin-bottom: 0.5rem;
 }
 
-.flight-airline img {
-    width: 40px;
-    height: 40px;
+.flight-airline i {
+    font-size: 1.5rem;
+    color: #667eea;
 }
 
 .flight-price {
@@ -546,10 +649,11 @@ body {
 }
 
 .hotel-filters {
-    max-width: 800px;
+    max-width: 1000px;
     margin: 0 auto 2rem;
     display: flex;
     gap: 1rem;
+    flex-wrap: wrap;
 }
 
 .hotel-filters input,
@@ -563,7 +667,7 @@ body {
 
 .hotels-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
     gap: 2rem;
 }
 
@@ -577,6 +681,7 @@ body {
 
 .hotel-card:hover {
     transform: translateY(-10px);
+    box-shadow: 0 15px 40px rgba(0,0,0,0.15);
 }
 
 .hotel-card img {
@@ -600,6 +705,11 @@ body {
     margin-bottom: 0.5rem;
 }
 
+.hotel-location i {
+    margin-right: 5px;
+    color: #667eea;
+}
+
 .hotel-price {
     font-size: 1.5rem;
     color: #f5576c;
@@ -612,6 +722,11 @@ body {
     margin-bottom: 1rem;
 }
 
+.load-more {
+    text-align: center;
+    margin-top: 3rem;
+}
+
 /* Contact Page */
 .contact-section {
     padding: 4rem 2rem;
@@ -619,7 +734,7 @@ body {
 
 .contact-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
     gap: 3rem;
 }
 
@@ -631,31 +746,53 @@ body {
     box-shadow: 0 10px 30px rgba(0,0,0,0.1);
 }
 
+.contact-info-card h2,
+.inquiry-form-card h2 {
+    margin-bottom: 1.5rem;
+    color: #667eea;
+}
+
 .contact-detail {
     display: flex;
     gap: 1rem;
     margin: 1.5rem 0;
-    align-items: center;
+    align-items: flex-start;
 }
 
 .contact-icon {
-    font-size: 2rem;
+    font-size: 1.5rem;
     width: 50px;
     height: 50px;
-    background: #f8f9fa;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
+    color: white;
+}
+
+.contact-detail h4 {
+    margin-bottom: 0.3rem;
+}
+
+.emergency {
+    color: #ffd700;
+    font-weight: bold;
+    margin-top: 0.5rem;
 }
 
 .success-message {
     background: #d4edda;
     color: #155724;
-    padding: 1rem;
+    padding: 2rem;
     border-radius: 10px;
     margin-top: 1rem;
     text-align: center;
+}
+
+.success-message i {
+    font-size: 3rem;
+    margin-bottom: 1rem;
 }
 
 /* Footer */
@@ -689,6 +826,29 @@ footer {
     color: white;
 }
 
+.social-links {
+    display: flex;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.social-links a {
+    display: inline-block;
+    width: 35px;
+    height: 35px;
+    background: rgba(255,255,255,0.1);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s;
+}
+
+.social-links a:hover {
+    background: #667eea;
+    transform: translateY(-3px);
+}
+
 .footer-bottom {
     text-align: center;
     margin-top: 3rem;
@@ -702,7 +862,15 @@ footer {
         display: none;
     }
     
-    .hero-content h1 {
+    .menu-toggle {
+        display: block;
+    }
+    
+    .hero-slider {
+        margin-top: 60px;
+    }
+    
+    .slide-content h1 {
         font-size: 2rem;
     }
     
@@ -710,7 +878,7 @@ footer {
         font-size: 2rem;
     }
     
-    .destinations-grid,
+    .destinations-slider,
     .hotels-grid,
     .reviews-grid {
         grid-template-columns: 1fr;
@@ -724,5 +892,13 @@ footer {
         flex-direction: column;
         text-align: center;
         gap: 1rem;
+    }
+    
+    .newsletter form {
+        flex-direction: column;
+    }
+    
+    .stats-grid {
+        grid-template-columns: repeat(2, 1fr);
     }
 }
