@@ -3,10 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hotels - Farenest Travels | Book Hotels Worldwide</title>
+    <title>Hotels & Restaurants - Farenest Travels</title>
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
 </head>
 <body>
 
@@ -20,7 +22,7 @@
             <li><a href="index.html">Home</a></li>
             <li><a href="about.html">About Us</a></li>
             <li><a href="flights.html">Flights</a></li>
-            <li><a href="hotels.html" class="active">Hotels</a></li>
+            <li><a href="hotels.html" class="active">Hotels & Restaurants</a></li>
             <li><a href="contact.html">Contact</a></li>
         </ul>
     </div>
@@ -33,32 +35,36 @@
 </a>
 
 <section class="page-header">
-    <h1>Hotels Worldwide</h1>
-    <p>Find the perfect accommodation in any city across the globe</p>
+    <h1>Find Hotels & Restaurants Worldwide</h1>
+    <p>Search any location - powered by Google Maps</p>
 </section>
 
 <section class="hotels-section">
     <div class="container">
-        <div class="hotel-filters">
-            <input type="text" id="hotelSearch" placeholder="Search by hotel name, city, or country..." onkeyup="filterHotels()">
-            <select id="priceFilter" onchange="filterHotels()">
-                <option value="all">All Prices</option>
-                <option value="0-100">Under $100</option>
-                <option value="100-200">$100 - $200</option>
-                <option value="200-500">$200 - $500</option>
-                <option value="500-1000">$500 - $1000</option>
-                <option value="1000+">$1000+</option>
-            </select>
-            <select id="ratingFilter" onchange="filterHotels()">
-                <option value="all">All Ratings</option>
-                <option value="5">5 Stars</option>
-                <option value="4">4 Stars & Up</option>
-                <option value="3">3 Stars & Up</option>
-            </select>
+        <div class="search-location">
+            <div class="form-group">
+                <label><i class="fas fa-map-marker-alt"></i> Search Location</label>
+                <input type="text" id="locationSearch" placeholder="Enter city, country, or address..." value="London, UK">
+            </div>
+            <div class="form-group">
+                <label><i class="fas fa-tag"></i> Place Type</label>
+                <select id="placeType">
+                    <option value="hotel">Hotels</option>
+                    <option value="restaurant">Restaurants</option>
+                    <option value="cafe">Cafes</option>
+                    <option value="bar">Bars & Pubs</option>
+                    <option value="lodging">All Accommodation</option>
+                </select>
+            </div>
+            <button onclick="searchPlaces()" class="btn btn-primary">Search</button>
         </div>
-        <div id="hotelsGrid" class="hotels-grid"></div>
-        <div id="loadMoreBtn" class="load-more">
-            <button onclick="loadMoreHotels()" class="btn">Load More Hotels</button>
+
+        <div id="mapContainer" style="height: 500px; width: 100%; margin: 2rem 0; border-radius: 15px; overflow: hidden;"></div>
+
+        <div id="placesResults" class="places-grid"></div>
+        <div id="loadingSpinner" style="text-align: center; display: none;">
+            <i class="fas fa-spinner fa-spin fa-3x"></i>
+            <p>Searching for places...</p>
         </div>
     </div>
 </section>
@@ -74,7 +80,7 @@
             <a href="index.html">Home</a>
             <a href="about.html">About Us</a>
             <a href="flights.html">Flights</a>
-            <a href="hotels.html">Hotels</a>
+            <a href="hotels.html">Hotels & Restaurants</a>
             <a href="contact.html">Contact</a>
         </div>
         <div class="footer-section">
@@ -85,9 +91,11 @@
     </div>
     <div class="footer-bottom">
         <p>&copy; 2024 Farenest Travels. All rights reserved.</p>
+        <p>Powered by OpenStreetMap & Overpass API</p>
     </div>
 </footer>
 
+<script src="airports.js"></script>
 <script src="script.js"></script>
 </body>
 </html>
