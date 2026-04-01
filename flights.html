@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flights - Farenest Travels | Book International Flights</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<nav class="navbar">
+    <div class="nav-container">
+        <div class="logo">Farenest<span>Travels</span></div>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="flights.html" class="active">Flights</a></li>
+            <li><a href="hotels.html">Hotels</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </div>
+</nav>
+
+<a href="https://wa.me/44798515953" class="whatsapp-float" target="_blank">
+    <div class="whatsapp-btn">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
+    </div>
+</a>
+
+<section class="page-header">
+    <h1>Search International Flights</h1>
+    <p>Find the best deals to 200+ destinations worldwide</p>
+</section>
+
+<section class="flight-search-section">
+    <div class="container">
+        <div class="flight-search-card">
+            <h2>Flight Search</h2>
+            <div class="search-form">
+                <div class="form-group">
+                    <label>From (Airport Code)</label>
+                    <select id="from">
+                        <option value="">Select Departure City</option>
+                        <option value="DXB">Dubai (DXB)</option>
+                        <option value="LHR">London (LHR)</option>
+                        <option value="JFK">New York (JFK)</option>
+                        <option value="CDG">Paris (CDG)</option>
+                        <option value="SYD">Sydney (SYD)</option>
+                        <option value="HND">Tokyo (HND)</option>
+                        <option value="DXB">Dubai (DXB)</option>
+                        <option value="SIN">Singapore (SIN)</option>
+                        <option value="BKK">Bangkok (BKK)</option>
+                        <option value="MLE">Male (MLE)</option>
+                        <option value="CPT">Cape Town (CPT)</option>
+                        <option value="LAX">Los Angeles (LAX)</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>To (Airport Code)</label>
+                    <select id="to">
+                        <option value="">Select Arrival City</option>
+                        <option value="DXB">Dubai (DXB)</option>
+                        <option value="LHR">London (LHR)</option>
+                        <option value="JFK">New York (JFK)</option>
+                        <option value="CDG">Paris (CDG)</option>
+                        <option value="SYD">Sydney (SYD)</option>
+                        <option value="HND">Tokyo (HND)</option>
+                        <option value="SIN">Singapore (SIN)</option>
+                        <option value="BKK">Bangkok (BKK)</option>
+                        <option value="MLE">Male (MLE)</option>
+                        <option value="CPT">Cape Town (CPT)</option>
+                        <option value="LAX">Los Angeles (LAX)</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>Departure Date</label>
+                    <input type="date" id="date">
+                </div>
+                <div class="form-group">
+                    <label>Passengers</label>
+                    <select id="passengers">
+                        <option value="1">1 Passenger</option>
+                        <option value="2">2 Passengers</option>
+                        <option value="3">3 Passengers</option>
+                        <option value="4">4 Passengers</option>
+                        <option value="5">5 Passengers</option>
+                        <option value="6">6+ Passengers</option>
+                    </select>
+                </div>
+            </div>
+            <button onclick="searchFlights()" class="btn btn-primary search-btn">Search Flights</button>
+            <div id="dateInfo"></div>
+        </div>
+
+        <div id="flightResults" class="flight-results"></div>
+    </div>
+</section>
+
+<footer>
+    <div class="footer-content">
+        <div class="footer-section">
+            <h3>Farenest Travels</h3>
+            <p>Your trusted travel partner since 2019</p>
+        </div>
+        <div class="footer-section">
+            <h3>Quick Links</h3>
+            <a href="index.html">Home</a>
+            <a href="about.html">About Us</a>
+            <a href="flights.html">Flights</a>
+            <a href="hotels.html">Hotels</a>
+            <a href="contact.html">Contact</a>
+        </div>
+        <div class="footer-section">
+            <h3>Contact</h3>
+            <p>📧 info@farenesttravels.com</p>
+            <p>📞 +44 798 515 953</p>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <p>&copy; 2024 Farenest Travels. All rights reserved.</p>
+    </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hotels - Farenest Travels | Book Hotels Worldwide</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<nav class="navbar">
+    <div class="nav-container">
+        <div class="logo">Farenest<span>Travels</span></div>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="flights.html">Flights</a></li>
+            <li><a href="hotels.html" class="active">Hotels</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </div>
+</nav>
+
+<a href="https://wa.me/44798515953" class="whatsapp-float" target="_blank">
+    <div class="whatsapp-btn">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
+    </div>
+</a>
+
+<section class="page-header">
+    <h1>Luxury Hotels Worldwide</h1>
+    <p>Find the perfect accommodation for your stay</p>
+</section>
+
+<section class="hotels-section">
+    <div class="container">
+        <div class="hotel-filters">
+            <input type="text" id="hotelSearch" placeholder="Search by hotel name or location..." onkeyup="filterHotels()">
+            <select id="priceFilter" onchange="filterHotels()">
+                <option value="all">All Prices</option>
+                <option value="0-500">Under $500</option>
+                <option value="500-1000">$500 - $1000</option>
+                <option value="1000+">$1000+</option>
+            </select>
+        </div>
+        <div id="hotelsGrid" class="hotels-grid"></div>
+    </div>
+</section>
+
+<footer>
+    <div class="footer-content">
+        <div class="footer-section">
+            <h3>Farenest Travels</h3>
+            <p>Your trusted travel partner since 2019</p>
+        </div>
+        <div class="footer-section">
+            <h3>Quick Links</h3>
+            <a href="index.html">Home</a>
+            <a href="about.html">About Us</a>
+            <a href="flights.html">Flights</a>
+            <a href="hotels.html">Hotels</a>
+            <a href="contact.html">Contact</a>
+        </div>
+        <div class="footer-section">
+            <h3>Contact</h3>
+            <p>📧 info@farenesttravels.com</p>
+            <p>📞 +44 798 515 953</p>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <p>&copy; 2024 Farenest Travels. All rights reserved.</p>
+    </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
