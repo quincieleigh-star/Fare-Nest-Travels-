@@ -6,12 +6,16 @@
     <title>Contact Us - Farenest Travels</title>
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
 
 <nav class="navbar">
     <div class="nav-container">
-        <div class="logo">Farenest<span>Travels</span></div>
+        <div class="logo">
+            <i class="fas fa-plane-departure"></i>
+            Farenest<span>Travels</span>
+        </div>
         <ul class="nav-links">
             <li><a href="index.html">Home</a></li>
             <li><a href="about.html">About Us</a></li>
@@ -24,7 +28,7 @@
 
 <a href="https://wa.me/44798515953" class="whatsapp-float" target="_blank">
     <div class="whatsapp-btn">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
+        <i class="fab fa-whatsapp"></i>
     </div>
 </a>
 
@@ -37,42 +41,53 @@
     <div class="container">
         <div class="contact-grid">
             <div class="contact-info-card">
-                <h2>Contact Information</h2>
+                <h2><i class="fas fa-address-card"></i> Contact Information</h2>
                 <div class="contact-detail">
-                    <div class="contact-icon">📧</div>
+                    <div class="contact-icon"><i class="fas fa-envelope"></i></div>
                     <div>
                         <h4>Email</h4>
                         <p>info@farenesttravels.com</p>
+                        <p>support@farenesttravels.com</p>
                     </div>
                 </div>
                 <div class="contact-detail">
-                    <div class="contact-icon">📞</div>
+                    <div class="contact-icon"><i class="fab fa-whatsapp"></i></div>
                     <div>
-                        <h4>Phone / WhatsApp</h4>
+                        <h4>WhatsApp</h4>
                         <p>+44 798 515 953</p>
                     </div>
                 </div>
                 <div class="contact-detail">
-                    <div class="contact-icon">📍</div>
+                    <div class="contact-icon"><i class="fas fa-phone"></i></div>
                     <div>
-                        <h4>Office Address</h4>
-                        <p>123 Travel Street, London, UK</p>
+                        <h4>Phone</h4>
+                        <p>+44 20 1234 5678</p>
+                        <p>+44 798 515 953</p>
                     </div>
                 </div>
                 <div class="contact-detail">
-                    <div class="contact-icon">⏰</div>
+                    <div class="contact-icon"><i class="fas fa-map-marker-alt"></i></div>
+                    <div>
+                        <h4>Office Address</h4>
+                        <p>123 Travel Street, Mayfair</p>
+                        <p>London, W1J 5AB, United Kingdom</p>
+                    </div>
+                </div>
+                <div class="contact-detail">
+                    <div class="contact-icon"><i class="fas fa-clock"></i></div>
                     <div>
                         <h4>Business Hours</h4>
-                        <p>Monday - Friday: 9am - 8pm</p>
-                        <p>Saturday: 10am - 6pm</p>
-                        <p>Sunday: 10am - 4pm</p>
-                        <p>✨ 24/7 Emergency Support Available</p>
+                        <p>Monday - Friday: 9:00 AM - 8:00 PM</p>
+                        <p>Saturday: 10:00 AM - 6:00 PM</p>
+                        <p>Sunday: 10:00 AM - 4:00 PM</p>
+                        <p class="emergency">✨ 24/7 Emergency Support Available ✨</p>
                     </div>
                 </div>
             </div>
 
             <div class="inquiry-form-card">
-                <h2>Send Us a Message</h2>
+                <h2><i class="fas fa-paper-plane"></i> Send Us a Message</h2>
+                <p>Fill out the form below and we'll get back to you within 24 hours</p>
                 <form id="inquiryForm" onsubmit="return submitInquiry(event)">
                     <div class="form-group">
                         <label>Full Name *</label>
@@ -96,17 +111,25 @@
                             <option value="package">Tour Package</option>
                             <option value="visa">Visa Assistance</option>
                             <option value="support">Customer Support</option>
+                            <option value="complaint">Complaint</option>
+                            <option value="feedback">Feedback</option>
                             <option value="other">Other</option>
                         </select>
                     </div>
                     <div class="form-group">
+                        <label>Subject</label>
+                        <input type="text" id="inquirySubject" placeholder="Brief subject of your inquiry">
+                    </div>
+                    <div class="form-group">
                         <label>Your Message *</label>
-                        <textarea id="inquiryMessage" rows="5" required></textarea>
+                        <textarea id="inquiryMessage" rows="6" required></textarea>
                     </div>
                     <button type="submit" class="btn btn-primary">Send Message</button>
                 </form>
                 <div id="inquirySuccess" class="success-message" style="display: none;">
-                    ✅ Thank you for reaching out! Our travel expert will contact you within 24 hours via WhatsApp and email.
+                    <i class="fas fa-check-circle"></i>
+                    <h3>Message Sent Successfully!</h3>
+                    <p>Thank you for reaching out! Our travel expert will contact you within 24 hours via WhatsApp and email.</p>
                 </div>
             </div>
         </div>
@@ -131,9 +154,9 @@
         </div>
         <div class="footer-section">
             <h3>Contact Info</h3>
-            <p>📧 info@farenesttravels.com</p>
-            <p>📞 +44 798 515 953</p>
-            <p>📍 London, United Kingdom</p>
+            <p><i class="fas fa-envelope"></i> info@farenesttravels.com</p>
+            <p><i class="fab fa-whatsapp"></i> +44 798 515 953</p>
+            <p><i class="fas fa-map-marker-alt"></i> London, United Kingdom</p>
         </div>
     </div>
     <div class="footer-bottom">
