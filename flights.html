@@ -3,15 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Flights - Farenest Travels | Book International Flights</title>
+    <title>Flights - Farenest Travels | Book Worldwide Flights</title>
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
 
 <nav class="navbar">
     <div class="nav-container">
-        <div class="logo">Farenest<span>Travels</span></div>
+        <div class="logo">
+            <i class="fas fa-plane-departure"></i>
+            Farenest<span>Travels</span>
+        </div>
         <ul class="nav-links">
             <li><a href="index.html">Home</a></li>
             <li><a href="about.html">About Us</a></li>
@@ -24,13 +28,13 @@
 
 <a href="https://wa.me/44798515953" class="whatsapp-float" target="_blank">
     <div class="whatsapp-btn">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
+        <i class="fab fa-whatsapp"></i>
     </div>
 </a>
 
 <section class="page-header">
     <h1>Search International Flights</h1>
-    <p>Find the best deals to 200+ destinations worldwide</p>
+    <p>Find the best deals to 5000+ airports in 200+ countries</p>
 </section>
 
 <section class="flight-search-section">
@@ -39,46 +43,19 @@
             <h2>Flight Search</h2>
             <div class="search-form">
                 <div class="form-group">
-                    <label>From (Airport Code)</label>
-                    <select id="from">
-                        <option value="">Select Departure City</option>
-                        <option value="DXB">Dubai (DXB)</option>
-                        <option value="LHR">London (LHR)</option>
-                        <option value="JFK">New York (JFK)</option>
-                        <option value="CDG">Paris (CDG)</option>
-                        <option value="SYD">Sydney (SYD)</option>
-                        <option value="HND">Tokyo (HND)</option>
-                        <option value="DXB">Dubai (DXB)</option>
-                        <option value="SIN">Singapore (SIN)</option>
-                        <option value="BKK">Bangkok (BKK)</option>
-                        <option value="MLE">Male (MLE)</option>
-                        <option value="CPT">Cape Town (CPT)</option>
-                        <option value="LAX">Los Angeles (LAX)</option>
-                    </select>
+                    <label><i class="fas fa-plane-departure"></i> From</label>
+                    <input type="text" id="from" placeholder="City or Airport Code" list="airportList">
                 </div>
                 <div class="form-group">
-                    <label>To (Airport Code)</label>
-                    <select id="to">
-                        <option value="">Select Arrival City</option>
-                        <option value="DXB">Dubai (DXB)</option>
-                        <option value="LHR">London (LHR)</option>
-                        <option value="JFK">New York (JFK)</option>
-                        <option value="CDG">Paris (CDG)</option>
-                        <option value="SYD">Sydney (SYD)</option>
-                        <option value="HND">Tokyo (HND)</option>
-                        <option value="SIN">Singapore (SIN)</option>
-                        <option value="BKK">Bangkok (BKK)</option>
-                        <option value="MLE">Male (MLE)</option>
-                        <option value="CPT">Cape Town (CPT)</option>
-                        <option value="LAX">Los Angeles (LAX)</option>
-                    </select>
+                    <label><i class="fas fa-plane-arrival"></i> To</label>
+                    <input type="text" id="to" placeholder="City or Airport Code" list="airportList">
                 </div>
                 <div class="form-group">
-                    <label>Departure Date</label>
+                    <label><i class="fas fa-calendar"></i> Departure Date</label>
                     <input type="date" id="date">
                 </div>
                 <div class="form-group">
-                    <label>Passengers</label>
+                    <label><i class="fas fa-user"></i> Passengers</label>
                     <select id="passengers">
                         <option value="1">1 Passenger</option>
                         <option value="2">2 Passengers</option>
@@ -97,6 +74,8 @@
     </div>
 </section>
 
+<datalist id="airportList"></datalist>
+
 <footer>
     <div class="footer-content">
         <div class="footer-section">
@@ -113,8 +92,8 @@
         </div>
         <div class="footer-section">
             <h3>Contact</h3>
-            <p>📧 info@farenesttravels.com</p>
-            <p>📞 +44 798 515 953</p>
+            <p><i class="fas fa-envelope"></i> info@farenesttravels.com</p>
+            <p><i class="fab fa-whatsapp"></i> +44 798 515 953</p>
         </div>
     </div>
     <div class="footer-bottom">
