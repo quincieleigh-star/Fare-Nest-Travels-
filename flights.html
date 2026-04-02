@@ -1,0 +1,42 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<title>Flights</title>
+<link rel="stylesheet" href="css/style.css">
+<script src="js/main.js"></script>
+<script src="js/flights.js"></script>
+</head>
+<body>
+
+<header>
+<img src="images/logo.png">
+<nav>
+<a href="index.html">Home</a>
+<a href="about.html">About</a>
+<a href="flights.html">Flights</a>
+<a href="hotels.html">Hotels & Restaurants</a>
+<a href="contact.html">Contact</a>
+</nav>
+</header>
+
+
+<div class="container">
+<h1>Search Flights</h1>
+
+<input id="from" placeholder="From Airport or City">
+<input id="to" placeholder="To Airport or City">
+<input type="date" id="date">
+
+<button onclick="searchFlights()">Search Flights</button>
+
+<div id="results" class="cards"></div>
+</div>
+
+
+<footer>
+© 2026 Farenest Travels
+</footer>
+
+</body>
+</html>
