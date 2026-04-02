@@ -1,0 +1,36 @@
+body {
+font-family: Arial;
+margin: 0;
+}
+
+.field {
+position: relative;
+}
+
+ul {
+position: absolute;
+background: white;
+width: 100%;
+list-style: none;
+padding: 0;
+margin: 0;
+border: 1px solid #ccc;
+max-height: 200px;
+overflow-y: auto;
+}
+
+li {
+padding: 10px;
+cursor: pointer;
+}
+
+li:hover {
+background: #eee;
+}
+
+button {
+background: orange;
+padding: 10px;
+border: none;
+cursor: pointer;
+}
