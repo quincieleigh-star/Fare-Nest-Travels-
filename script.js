@@ -104,3 +104,24 @@ window.location.href = `mailto:info@farenesttravels.com?body=${msg}`;
 // Init
 setup("from", "fromList");
 setup("to", "toList");
+async function searchHotels() {
+  const city = document.getElementById("city").value;
+
+  const res = await fetch(
+    `https://nominatim.openstreetmap.org/search?format=json&q=hotels in ${city}`
+  );
+
+  const data = await res.json();
+
+  document.getElementById("results").innerHTML = data.slice(0,10).map(h => `
+    <div>
+      <h3>${h.display_name}</h3>
+      <button onclick="bookHotel('${h.display_name}')">Book via WhatsApp</button>
+    </div>
+  `).join("");
+}
+
+function bookHotel(name) {
+  const msg = `Hotel Booking: ${name}`;
+  window.open(`https://wa.me/44798515953?text=${encodeURIComponent(msg)}`);
+}
